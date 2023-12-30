@@ -14,6 +14,11 @@ from pathlib import Path
 from decouple import config
 import dj_database_url
 
+#link to db
+DATABASES = {
+	"default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
+}
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 
@@ -101,9 +106,7 @@ DATABASES = {
     }
 }
 '''
-DATABASES = {
-    'default': dj_database_url.parse('postgres://production_database_kgze_user:Npbx150XpSpPFcPWkvwLdhFCsIb9IyP0@dpg-cm7frhud3nmc73at5u8g-a.singapore-postgres.render.com/production_database_kgze')
-}
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
