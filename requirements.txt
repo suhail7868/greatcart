@@ -37,6 +37,6 @@ termcolor==2.4.0
 typing_extensions==4.9.0
 tzdata==2023.3
 urllib3==1.26.3
-wcwidth==0.2.12
+#wcwidth==0.2.12
 dj-database-url
 gunicorn
