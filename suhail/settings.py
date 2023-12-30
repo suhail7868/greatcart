@@ -12,9 +12,12 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 from decouple import config
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
+
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -43,7 +46,7 @@ INSTALLED_APPS = [
     'store',
     'carts',
     'orders',
-    'admin_honeypot',
+    
 
 ]
 
@@ -90,14 +93,17 @@ AUTH_USER_MODEL='accounts.Account'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
+'''
+DATABASES = {
+    'default': dj_database_url.parse('postgres://production_database_kgze_user:Npbx150XpSpPFcPWkvwLdhFCsIb9IyP0@dpg-cm7frhud3nmc73at5u8g-a.singapore-postgres.render.com/production_database_kgze')
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
